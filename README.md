@@ -1,99 +1,125 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人简介</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>🌈 我的自我介绍</title>
+    <style>
+        /* 色彩鲜明的渐变背景 */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+ 
+        /* 背景动画 */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+ 
+        /* 主内容容器 */
+        .profile-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+        }
+ 
+        /* 头像样式 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+ 
+        /* 标题样式 */
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+ 
+        /* 副标题样式 */
+        h2 {
+            color: #e74c3c;
+            margin: 0 0 1.5rem 0;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+ 
+        /* 技能标签 */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+ 
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+ 
+        .skill-tag:hover {
+            transform: translateY(-2px);
+        }
+ 
+        /* 社交链接 */
+        .social-links a {
+            color: #2c3e50;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+ 
+        .social-links a:hover {
+            color: #e74c3c;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home" class="active">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#contact">联系我</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="profile-card">
+        <img src="https://via.placeholder.com/150" alt="头像" class="avatar">
+        <h1>张 三</h1>
+        <h2>全栈开发工程师</h2>
+        
+        <p>热爱编程与设计的极客，擅长将创意转化为数字产品。拥有5年Web开发经验，专注于前端性能优化与用户体验设计。</p>
  
-    <main>
-        <section id="home" class="hero">
-            <div class="container">
-                <h1>你好！我是张三</h1>
-                <p>全栈开发者 | 技术爱好者 | 终身学习者</p>
-                <a href="#contact" class="cta-button">立即联系</a>
-            </div>
-        </section>
+        <div class="skills">
+            <div class="skill-tag">HTML5</div>
+            <div class="skill-tag">CSS3</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Node.js</div>
+            <div class="skill-tag">Git</div>
+        </div>
  
-        <section id="about" class="content-section">
-            <div class="container">
-                <h2>关于我</h2>
-                <p>拥有5年前端开发经验，熟悉React/Vue技术栈，热爱开源社区，喜欢探索新技术。</p>
-                <div class="profile-card">
-                    <img src="profile.jpg" alt="个人照片" class="avatar">
-                    <div class="card-content">
-                        <h3>专业方向</h3>
-                        <ul>
-                            <li>Web开发</li>
-                            <li>响应式设计</li>
-                            <li>性能优化</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
- 
-        <section id="skills" class="content-section">
-            <div class="container">
-                <h2>技术技能</h2>
-                <div class="skill-grid">
-                    <div class="skill-card">
-                        <h3>前端开发</h3>
-                        <ul>
-                            <li>HTML5/CSS3</li>
-                            <li>JavaScript/ES6+</li>
-                            <li>React/Vue</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3>后端开发</h3>
-                        <ul>
-                            <li>Node.js</li>
-                            <li>Python/Django</li>
-                            <li>MySQL/MongoDB</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
- 
-        <section id="contact" class="content-section">
-            <div class="container">
-                <h2>联系我</h2>
-                <div class="contact-info">
-                    <a href="mailto:zhangsan@example.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> zhangsan@example.com
-                    </a>
-                    <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
- 
-    <footer>
-        <p>&copy; 2023 张三. 保留所有权利。</p>
-    </footer>
- 
-    <script src="https://kit.fontawesome.com/your-font-awesome-code.js"></script>
-    <script src="script.js"></script>
+        <div class="social-links">
+            <a href="#" target="_blank">🌐 个人网站</a>
+            <a href="#" target="_blank">📧 联系邮箱</a>
+            <a href="#" target="_blank">🐦 Twitter</a>
+        </div>
+    </div>
 </body>
 </html>
